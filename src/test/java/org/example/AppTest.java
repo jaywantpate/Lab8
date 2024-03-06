@@ -1,8 +1,12 @@
 package org.example;
 
+import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import java.util.EmptyStackException;
+import java.util.Optional;
 
 /**
  * Unit test for simple App.
@@ -33,6 +37,21 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+
+        MyStack<Integer> st = new MyStack();
+        st.push(0);
+        assertTrue(st.get(0).equals(0));
+        Integer x = st.pop();
+        assertTrue(x.equals(0));
+
+        boolean exceptionthrown = false;
+
+        try{
+            x = st.pop();
+        } catch (EmptyStackException e){
+            exceptionthrown = true;
+        }
+
+        assertTrue(exceptionthrown);
     }
 }
