@@ -40,7 +40,7 @@ public class AppTest
 
         MyStack<Integer> st = new MyStack();
         st.push(0);
-        assertTrue(st.get(0).equals(0));
+        assertTrue(st.peekTop().equals(0));
         Integer x = st.pop();
         assertTrue(x.equals(0));
 
