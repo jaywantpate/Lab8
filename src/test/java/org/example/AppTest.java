@@ -35,7 +35,9 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+
+
+    public void testPush()
     {
 
         MyStack<Integer> st = new MyStack();
@@ -53,5 +55,16 @@ public class AppTest
         }
 
         assertTrue(exceptionthrown);
+    }
+
+    public void testisEmpty(){
+        MyStack<Integer> st = new MyStack();
+        assertTrue(st.isEmpty());
+    }
+
+    public void testSize(){
+        MyStack<Integer> st = new MyStack();
+        st.push(5);
+        assertEquals(st.size(), 1);
     }
 }

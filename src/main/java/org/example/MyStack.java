@@ -12,18 +12,26 @@ public class MyStack<E> extends ArrayList<E>{
         this.delegate = this;
     }
 
+    public boolean isEmpty() {
+        return delegate.isEmpty();
+    }
+
+    public int size(){
+        return delegate.size();
+    }
+
     public void push(E e) {
         delegate.add(e);
     }
 
     public E pop() {
         if (isEmpty()) throw new EmptyStackException();
-        E e = delegate.get(delegate.size() - 1);
-        remove(delegate.size() -1 );
+        E e = delegate.get(size() - 1);
+        remove(size() -1 );
         return e;
     }
 
     public E peekTop() {
-        return delegate.get(delegate.size() - 1);
+        return delegate.get(size() - 1);
     }
 }
