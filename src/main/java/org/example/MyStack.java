@@ -12,17 +12,18 @@ public class MyStack<E> extends ArrayList<E>{
         this.delegate = this;
     }
 
-    public void push(E e) {add(e);
+    public void push(E e) {
+        delegate.add(e);
     }
 
     public E pop() {
         if (isEmpty()) throw new EmptyStackException();
-        E e = get(size() - 1);
-        remove(size() -1 );
+        E e = delegate.get(delegate.size() - 1);
+        remove(delegate.size() -1 );
         return e;
     }
 
     public E peekTop() {
-        return get(size() - 1);
+        return delegate.get(delegate.size() - 1);
     }
 }
